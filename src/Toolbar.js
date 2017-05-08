@@ -6,7 +6,6 @@ import './Toolbar.css';
 
 class Toolbar extends Component{
 
-  
   render(){
     return (
       <div>
@@ -24,7 +23,7 @@ class Toolbar extends Component{
         </div>
         <div className="row">
           <ActiveUser/>
-          <UserList/>
+          <UserList data={this.props.data}/>
         </div>
       </div>
     )

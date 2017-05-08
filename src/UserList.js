@@ -4,6 +4,9 @@ import UserData from './UserData';
 import './UserList.css';
 
 class UserList extends Component{
+
+
+
   render(){
     return(
       <div className="col-md-9">
@@ -16,9 +19,9 @@ class UserList extends Component{
               <th>Phone</th>
             </tr>
           </thead>
-          <tbody>
-            <UserData/>
-          </tbody>
+
+            <UserData data={this.props.data}/>
+
         </table>
       </div>
     )

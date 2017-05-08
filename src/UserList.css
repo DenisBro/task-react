@@ -8,3 +8,15 @@
 .user-list tbody>tr>td{
   padding: 8px;
 }
+.user-list tbody tr{
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  cursor: pointer;
+}
+.user-list tbody>tr:hover{
+  background-color: #eee;
+}
+.user-list img{
+  max-width: 60px;
+  max-height: 60px;
+}
