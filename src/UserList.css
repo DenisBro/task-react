@@ -1,0 +1,10 @@
+.user-list{
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+}
+.user-list thead>tr>th,
+.user-list tbody>tr>td{
+  padding: 8px;
+}
