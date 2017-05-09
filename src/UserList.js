@@ -5,8 +5,6 @@ import './UserList.css';
 
 class UserList extends Component{
 
-
-
   render(){
     return(
       <div className="col-md-9">
@@ -20,7 +18,7 @@ class UserList extends Component{
             </tr>
           </thead>
 
-            <UserData data={this.props.data}/>
+            <UserData data={this.props.data} update={this.props.update}/>
 
         </table>
       </div>

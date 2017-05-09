@@ -10,7 +10,9 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state={
-      data: null
+      data: null,
+      active: 0,
+      filterText: ''
     }
   }
 
@@ -23,13 +25,19 @@ class App extends Component {
       });
   }
 
+  changeState(config){
+    this.setState(config);
+  }
+
   render() {
-  //      console.log(this.state.data);
+ //console.log(this.state.filterText);
     if(this.state.data !== null){
     return (
       <div className="container-fluid">
-        <SearchBar/>
-          <Toolbar data={this.state.data}/>
+          <SearchBar inputText={this.state.filterText}
+                     update={this.changeState.bind(this)}/>
+          <Toolbar data={this.state}
+                   update={this.changeState.bind(this)}/>
       </div>
     );
   }else{
