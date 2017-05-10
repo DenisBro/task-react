@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import ActiveUser from './ActiveUser';
 import UserList from './UserList';
 
-import './Toolbar.css';
 
 class Toolbar extends Component{
   constructor(props){
@@ -30,15 +29,14 @@ class Toolbar extends Component{
    }
    this.setState(forState);
 
-   this.props.update(sortedUsers);
+   this.props.update({data:sortedUsers});
   }
-
 
   render(){
     return (
       <div>
         <div className="row">
-          <div className="sort-btns col-sm-12">
+          <div className="toolbar-sortbtns col-sm-12">
             <button onClick={() => this.sortBy('name')}>
               <i className="fa fa-sort-alpha-desc" aria-hidden="true"></i>
               Sort by name

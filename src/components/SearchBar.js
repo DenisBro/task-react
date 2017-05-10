@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './Searchbar.css';
+
 
 class SearchBar extends Component{
   constructor(props){
@@ -8,7 +8,13 @@ class SearchBar extends Component{
   }
 
   addFilterText(e){
-    this.props.update({filterText: e.target.value});
+    let value = e.target.value.toLowerCase();
+    let alluser = this.props.iniData.filter(elem=>elem.name.toLowerCase().includes(value));
+
+    this.props.update({filterText: value,
+                         data: alluser,
+                         active: 0
+                      });
   }
 
   render(){

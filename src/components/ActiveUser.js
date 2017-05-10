@@ -1,14 +1,22 @@
 import React, {Component} from 'react';
 
-import './ActiveUser.css';
-
 class ActiveUser extends Component{
 
   render(){
-    const user = this.props.states.data.filter(user=>user.id === this.props.states.active)[0];
+
+    if(this.props.states.data.length === 0){
+      return (
+        <h3 className="col-md-3">
+          Nothing found..
+        </h3>
+      );
+    }
+
+    let  user = this.props.states.data[this.props.states.active];
+
     return(
       <div className="col-md-3">
-        <div className="sidebar">
+        <div className="activeuser-sidebar">
           <img src={`images/${user.image}.svg`} alt="foto-sidebar"/>
           <h3>{user.name}</h3>
           <table>
@@ -31,6 +39,7 @@ class ActiveUser extends Component{
         </div>
       </div>
     )
+
   }
 }
 

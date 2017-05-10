@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import UserData from './UserData';
 
-import './UserList.css';
 
 class UserList extends Component{
 
@@ -17,9 +16,7 @@ class UserList extends Component{
               <th>Phone</th>
             </tr>
           </thead>
-
-            <UserData data={this.props.data} update={this.props.update}/>
-
+            <UserData stateFilter={this.props.states.filterText} data={this.props.data} update={this.props.update}/>
         </table>
       </div>
     )
